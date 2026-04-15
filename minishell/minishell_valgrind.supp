@@ -1,0 +1,57 @@
+{
+   <rl_initialize_suppression>
+   Memcheck:Leak
+   ...
+   fun:rl_initialize
+}
+
+{
+   <rl_redisplay_suppression>
+   Memcheck:Leak
+   ...
+   fun:rl_redisplay
+}
+
+{
+   <rl_set_prompt_suppression>
+   Memcheck:Leak
+   ...
+   fun:rl_set_prompt
+}
+
+{
+   <readline_internal_char_suppression>
+   Memcheck:Leak
+   ...
+   fun:readline_internal_char
+}
+
+{
+   <readline_alloc_history_entry_reachable>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:alloc_history_entry
+   fun:add_history
+   ...
+}
+
+{
+   <readline_add_history_reachable>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:add_history
+   ...
+}
+
+{
+   <readline_internal_teardown_reachable_small>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   ...
+   fun:readline_internal_teardown
+   fun:readline
+   ...
+}
+

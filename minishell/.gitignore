@@ -1,0 +1,15 @@
+logs/*
+minishell
+*.o
+Redrcs/*.o
+Parsing_cmds/*.o
+signals/*.o
+Built_in_cmds/*.o
+Libft/*.o
+Libft/*.a
+pipex/*.o
+Redrcs/redrc_utils.o
+minishell_tester/
+runThis.sh
+explanations/*
+git 
