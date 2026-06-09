@@ -31,6 +31,26 @@ static std::string get_input(std::string prompt)
     return (input);
 }
 
+bool valid_num(std::string phone)
+{
+    size_t i = 0;
+    if (phone.empty())
+        return(false);
+    if (phone[0] == '+')
+    {    
+        if (phone.length() == 1)
+            return (false);
+        i = 1;
+    }
+    while (i < phone.length())
+    {
+        if (phone[i] < '0' || phone[i] > '9')
+            return (false);
+        i++;
+    }
+    return(true);
+}
+
 //Function fills one contact, sores it inside contacts[next] until there is 8 contacts
 void    PhoneBook::add(void)
 {
@@ -49,9 +69,15 @@ void    PhoneBook::add(void)
     nickname = get_input("Nickname: ");
     if (nickname.empty())
         return ;
-    phonenumber = get_input("Phone Number: ");
-    if (phonenumber.empty())
-        return ;
+    while (1)
+    {
+        phonenumber = get_input("Phone Number: ");
+        if (phonenumber.empty())
+            return ;
+        if (valid_num(phonenumber))
+            break ;
+        std::cout << "You can only enter numbers." << std::endl;
+    }
     darkestsecret = get_input("Darkest Secret: ");
     if (darkestsecret.empty())
         return ;
@@ -70,7 +96,7 @@ static std::string reduce_length(std::string str)
     return (str);
 }
 
-static void print_row(int index, Contact contact)
+static void print_row(int index, Contact contact) //iomanip library used
 {
     std::cout << std::setw(10) << index << "|";
     std::cout << std::setw(10) << reduce_length(contact.get_first()) << "|";
@@ -101,7 +127,7 @@ void PhoneBook ::search(void) const
     std::cout << std::setw(10) << "Index" << '|';
     std::cout << std::setw(10) << "First Name" << '|';
     std::cout << std::setw(10) << "Last Name" << '|';
-    std::cout << std::setw(10) << "Nickname" << '|' << std::endl;
+    std::cout << std::setw(10) << "Nickname" << std::endl;
     i = 0;
     while (i < this->_count)
     {
