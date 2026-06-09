@@ -105,16 +105,16 @@ Fixed Fixed::operator/(const Fixed& other) const
     return (result);
 }
 
-Fixed& Fixed::operator++()
+Fixed& Fixed::operator++() //pre-increment, no parameters
 {
     ++_value;
     return *this;
 }
 
-Fixed Fixed::operator++(int) 
+Fixed Fixed::operator++(int) //parameters tells compiler it is post increment
 {
     Fixed temp(*this);
-    ++_value; //pre-increment
+    ++_value;
     return (temp);
 }
 
@@ -127,7 +127,7 @@ Fixed& Fixed::operator--() //no parameters it is pre
 Fixed Fixed::operator--(int) //parameters are here it is post
 {
     Fixed temp(*this);
-    --_value; //pre-increment
+    --_value;
     return (temp);
 }
 
