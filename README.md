@@ -13,5 +13,6 @@ Each project helped me strengthen my understanding of C programming, problem-sol
 - **minishell** — A simple shell that handles commands, pipes, redirections, and environment variables.
 - **philosophers** — A multithreading project based on the dining philosophers problem, exploring synchronization and concurrency.
 - **cub3d** — A 3D maze exploration program built in C using ray-casting techniques to render a realistic first-person view of the inside of a maze from a `.cub` scene description file.
+- **cub3d** — The C++ (CPP) module introduces Object-Oriented Programming (OOP). Spanning 10 progressive modules, it teaches foundational C++ syntax, memory management, polymorphism, and the C++98 standard
 
 These projects reflect my progress in low-level programming and my experience with the 42 curriculum.
